@@ -1,0 +1,14 @@
+python main_pretrain.py \
+    --resume '/mnt/ceph/image_tasks_rwm/mae/output_dir/checkpoint-44.pth' \
+    --output_dir './output_dir_h200' \
+    --log_dir './output_dir_h200' \
+    --batch_size 1024 \
+    --world_size 1 \
+    --model mae_vit_base_patch16 \
+    --norm_pix_loss \
+    --mask_ratio 0.75 \
+    --epochs 800 \
+    --warmup_epochs 40 \
+    --data_path '/mnt/ceph/image_tasks_rwm/dataset' \
+    --blr 1.5e-4 \
+    --weight_decay 0.05
